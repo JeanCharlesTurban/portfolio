@@ -31,22 +31,22 @@ function App() {
             </button>
 
             <div className="hidden md:flex space-x-6">
-              <Link to="/about" className="nav-link">About</Link>
-              <Link to="/timeline" className="nav-link">Timeline</Link>
-              <Link to="/skills" className="nav-link">Skills</Link>
-              <Link to="/pictures" className="nav-link">Portfolio</Link>
-              <Link to="/contact" className="nav-link">Contact</Link>
+              <Link to="/portfolio/about" className="nav-link">About</Link>
+              <Link to="/portfolio/timeline" className="nav-link">Timeline</Link>
+              <Link to="/portfolio/skills" className="nav-link">Skills</Link>
+              <Link to="/portfolio/pictures" className="nav-link">Portfolio</Link>
+              <Link to="/portfolio/contact" className="nav-link">Contact</Link>
             </div>
           </div>
 
           {isMenuOpen && (
             <div className="md:hidden absolute top-full left-0 w-full bg-space-light py-4">
               <div className="flex flex-col items-center space-y-4">
-                <Link to="/about" className="nav-link" onClick={() => setIsMenuOpen(false)}>About</Link>
-                <Link to="/timeline" className="nav-link" onClick={() => setIsMenuOpen(false)}>Timeline</Link>
-                <Link to="/skills" className="nav-link" onClick={() => setIsMenuOpen(false)}>Skills</Link>
-                <Link to="/pictures" className="nav-link" onClick={() => setIsMenuOpen(false)}>Portfolio</Link>
-                <Link to="/contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>Contact</Link>
+                <Link to="/portfolio/about" className="nav-link" onClick={() => setIsMenuOpen(false)}>About</Link>
+                <Link to="/portfolio/timeline" className="nav-link" onClick={() => setIsMenuOpen(false)}>Timeline</Link>
+                <Link to="/portfolio/skills" className="nav-link" onClick={() => setIsMenuOpen(false)}>Skills</Link>
+                <Link to="/portfolio/pictures" className="nav-link" onClick={() => setIsMenuOpen(false)}>Portfolio</Link>
+                <Link to="/portfolio/contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>Contact</Link>
               </div>
             </div>
           )}
@@ -54,11 +54,11 @@ function App() {
 
         <Routes>
           <Route path="/portfolio" element={<About />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/timeline" element={<Timeline />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/pictures" element={<Portfolio />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/portfolio/about" element={<About />} />
+          <Route path="/portfolio/timeline" element={<Timeline />} />
+          <Route path="/portfolio/skills" element={<Skills />} />
+          <Route path="/portfolio/pictures" element={<Portfolio />} />
+          <Route path="/portfolio/contact" element={<Contact />} />
         </Routes>
 
         <footer className="py-8 px-6 text-center text-gray-400 bg-space-dark/50 backdrop-blur-sm">
