@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-space-dark text-gray-100 font-inter overflow-x-hidden;
+  }
+}
+
+.space-gradient {
+  background: linear-gradient(to bottom, #0B0B19 0%, #1B1B3A 50%, #0B0B19 100%);
+}
+
+.star-field {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star-field::before,
+.star-field::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 70px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 50px 160px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 130px 80px, #ffffff, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: twinkle 5s ease-in-out infinite alternate;
+}
+
+.star-field::after {
+  background-position: 100px 100px;
+  animation-delay: 2.5s;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.4; }
+  to { opacity: 0.8; }
+}
+
+.nav-link {
+  @apply relative px-4 py-2 text-gray-300 hover:text-white transition-colors;
+}
+
+.nav-link::after {
+  content: '';
+  @apply absolute left-0 bottom-0 w-0 h-0.5 bg-cosmic-blue transition-all duration-300;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+/* Timeline specific styles */
+.timeline-item {
+  @apply relative flex items-center justify-center;
+}
+
+.timeline-content {
+  @apply relative bg-space-light/20 backdrop-blur-lg rounded-lg p-6 border border-cosmic-blue/20 transition-all duration-300;
+}
+
+.timeline-content:hover {
+  @apply border-cosmic-blue/50 transform scale-105;
+  box-shadow: 0 0 20px rgba(100, 149, 237, 0.2);
+}
