@@ -19,7 +19,7 @@ function App() {
         <nav className="fixed w-full bg-space-dark/95 backdrop-blur-sm z-50 px-6 py-4">
           <div className="max-w-6xl mx-auto flex justify-between items-center">
             <Link to="/" className="text-2xl font-space font-bold text-cosmic-blue">
-              Cosmic Journey
+              Jean Turban
             </Link>
             
             <button 
@@ -62,7 +62,7 @@ function App() {
         </Routes>
 
         <footer className="py-8 px-6 text-center text-gray-400 bg-space-dark/50 backdrop-blur-sm">
-          <p>© 2024 Cosmic Journey. All rights reserved.</p>
+          <p>© 2024 Jean Turban. All rights reserved.</p>
         </footer>
       </div>
     </Router>

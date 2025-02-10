@@ -1,6 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Rocket, Code, Star, Award, Target } from 'lucide-react';
+import { 
+  BookOpen, 
+  BarChart, 
+  Globe, 
+  Building, 
+  Cpu, 
+  GraduationCap, 
+  Database, 
+  Users, 
+  Rocket, 
+  Handshake, 
+  TrendingUp 
+} from 'lucide-react';
 
 interface TimelineEvent {
   year: string;
@@ -11,35 +23,70 @@ interface TimelineEvent {
 
 const events = [
   {
-    year: '2015',
-    title: 'The Beginning',
-    description: 'Started my journey in the vast universe of technology.',
-    icon: <Rocket className="w-6 h-6" />,
+    year: '2016',
+    title: 'Started at Cornell',
+    description: 'Began undergraduate studies in Mechanical Engineering at Cornell University.',
   },
   {
     year: '2017',
-    title: 'First Milestone',
-    description: 'Launched my first major project into orbit.',
-    icon: <Code className="w-6 h-6" />,
+    title: 'Founded Titan Analytics',
+    description: 'Launched a sports analytics startup focused on extracting football data from video using ML.',
+    icon: <BarChart className="w-6 h-6" />,
+  },
+  {
+    year: '2018',
+    title: 'Studied at Cambridge',
+    description: 'Completed a summer semester covering sustainable energy, jet propulsion, and quantum mechanics.',
+    icon: <Globe className="w-6 h-6" />,
+  },
+  {
+    year: '2018',
+    title: 'Joined Cornell EHub',
+    description: 'Retrofitted building technology and supported student startups at Cornell’s entrepreneurship hub.',
+    icon: <Building className="w-6 h-6" />,
   },
   {
     year: '2019',
-    title: 'New Horizons',
-    description: 'Explored new technologies and expanded my skill set.',
-    icon: <Star className="w-6 h-6" />,
+    title: 'Worked at VICIS',
+    description: 'Developed AI-powered player fitting technology, reducing fitting time by 67%.',
+    icon: <Cpu className="w-6 h-6" />,
+  },
+  {
+    year: '2020',
+    title: 'Graduated from Cornell',
+    description: 'Completed B.S. in Mechanical Engineering and M.Eng. in Systems Engineering.',
+    icon: <GraduationCap className="w-6 h-6" />,
   },
   {
     year: '2021',
-    title: 'Achievement Unlocked',
-    description: 'Reached new heights with groundbreaking projects.',
-    icon: <Award className="w-6 h-6" />,
+    title: 'Joined StartupTree',
+    description: 'Led data analytics and reporting for university entrepreneurship centers, securing $5M in funding.',
+    icon: <Database className="w-6 h-6" />,
+  },
+  {
+    year: '2022',
+    title: 'Co-Founded StartupTree',
+    description: 'Scaled the engineering team, secured a $750K Blackstone partnership, and boosted engagement by 43%.',
+    icon: <Users className="w-6 h-6" />,
   },
   {
     year: '2023',
-    title: 'Current Mission',
-    description: 'Leading innovative projects and mentoring future explorers.',
-    icon: <Target className="w-6 h-6" />,
-  }
+    title: 'Co-Founded Talentpath',
+    description: 'Built the company from zero to $384K ARR, scaling an engineering team to 15 and delivering 12+ MVPs.',
+    icon: <Rocket className="w-6 h-6" />,
+  },
+  {
+    year: '2023',
+    title: 'Executive Director at Life Changing Labs',
+    description: 'Raised $140K in funding and helped startups raise $3M while scaling to 200K+ users.',
+    icon: <Handshake className="w-6 h-6" />,
+  },
+  {
+    year: '2024',
+    title: 'Expanded Talentpath',
+    description: 'Led Talentpath’s business growth, launching new initiatives to expand its services.',
+    icon: <TrendingUp className="w-6 h-6" />,
+  },
 ];
 
 function Timeline() {
@@ -53,7 +100,7 @@ function Timeline() {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl font-space font-bold mb-6 text-cosmic-blue">
-            My Cosmic Journey
+            My Jean Turban
           </h1>
           <p className="text-xl text-gray-300">
             A timeline of my adventures through the tech universe
@@ -134,11 +181,15 @@ function Timeline() {
                   )}
 
                   {/* Center Icon - Desktop only */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 top-1/2 -mt-6 w-12 h-12 rounded-full bg-space-light border-4 border-cosmic-blue flex items-center justify-center">
-                    <div className="text-cosmic-blue">
+                  
+                    {index !== 0 && (
+                    <div className="absolute left-1/2 transform -translate-x-1/2 top-1/2 -mt-6 w-12 h-12 rounded-full bg-space-light border-4 border-cosmic-blue flex items-center justify-center">
+                      <div className="text-cosmic-blue">
                       {event.icon}
+                      </div>
                     </div>
-                  </div>
+                    )}
+
                 </div>
               </motion.div>
             ))}

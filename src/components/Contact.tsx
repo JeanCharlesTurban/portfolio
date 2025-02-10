@@ -11,8 +11,10 @@ function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    const mailtoLink = `mailto:jt665@cornell.edu?subject=Reaching Out&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    )}`;
+    window.open(mailtoLink, '_blank');
   };
 
   return (
@@ -46,15 +48,15 @@ function Contact() {
               <div className="space-y-4">
                 <div className="flex items-center space-x-4 text-gray-300">
                   <Mail size={20} className="text-cosmic-blue" />
-                  <span>contact@example.com</span>
+                  <span>jt665@cornell.edu</span>
                 </div>
-                <div className="flex items-center space-x-4 text-gray-300">
+                {/* <div className="flex items-center space-x-4 text-gray-300">
                   <Phone size={20} className="text-cosmic-blue" />
                   <span>+1 (555) 123-4567</span>
-                </div>
+                </div> */}
                 <div className="flex items-center space-x-4 text-gray-300">
                   <MapPin size={20} className="text-cosmic-blue" />
-                  <span>San Francisco, CA</span>
+                  <span>New York City, NY</span>
                 </div>
               </div>
             </div>
