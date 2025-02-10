@@ -34,7 +34,7 @@ function App() {
               <Link to="/about" className="nav-link">About</Link>
               <Link to="/timeline" className="nav-link">Timeline</Link>
               <Link to="/skills" className="nav-link">Skills</Link>
-              <Link to="/portfolio" className="nav-link">Portfolio</Link>
+              <Link to="/pictures" className="nav-link">Portfolio</Link>
               <Link to="/contact" className="nav-link">Contact</Link>
             </div>
           </div>
@@ -45,7 +45,7 @@ function App() {
                 <Link to="/about" className="nav-link" onClick={() => setIsMenuOpen(false)}>About</Link>
                 <Link to="/timeline" className="nav-link" onClick={() => setIsMenuOpen(false)}>Timeline</Link>
                 <Link to="/skills" className="nav-link" onClick={() => setIsMenuOpen(false)}>Skills</Link>
-                <Link to="/portfolio" className="nav-link" onClick={() => setIsMenuOpen(false)}>Portfolio</Link>
+                <Link to="/pictures" className="nav-link" onClick={() => setIsMenuOpen(false)}>Portfolio</Link>
                 <Link to="/contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>Contact</Link>
               </div>
             </div>
@@ -53,11 +53,11 @@ function App() {
         </nav>
 
         <Routes>
-          <Route path="/" element={<About />} />
+          <Route path="/portfolio" element={<About />} />
           <Route path="/about" element={<About />} />
           <Route path="/timeline" element={<Timeline />} />
           <Route path="/skills" element={<Skills />} />
-          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/pictures" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
 
