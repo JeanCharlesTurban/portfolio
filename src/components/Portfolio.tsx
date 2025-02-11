@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { X, Filter } from 'lucide-react';
+import '../styles/global.css';
 import CentralParkSkyscrapers from '../../photos/Central Park Sunday Shots Date-1.jpg'
 import CentralParkHeadShot from '../../photos/Central Park Sunday Shots Date-13.jpg'
 import CentralParkSkyscrapers2 from '../../photos/Central Park Sunday Shots Date-14.jpg'
@@ -89,11 +90,6 @@ import RedMacroToyCarOne from '../../photos/IMG_8101.JPG'
 import RedMacroToyCarTwo from '../../photos/IMG_8116.JPG'
 import RedMacroToyCarThree from '../../photos/IMG_81181.JPG'
 import RedMacroToyCarFour from '../../photos/IMG_8119.JPG'
-
-
-
-
-
 
 interface Photo {
   id: number;
@@ -813,18 +809,50 @@ const photos: Photo[] = [
 
 const categories = ['All', 'Buildings', 'People', 'Space', 'Macro', 'Nature', 'Flight', 'Formula 1'];
 const years = [2024, 2023, 2022];
+const photosPerPage = 6;
 
 function Portfolio() {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedYear, setSelectedYear] = useState<number | null>(null);
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [loading, setLoading] = useState(true);
 
   const filteredPhotos = photos.filter(photo => {
     const categoryMatch = selectedCategory === 'All' || photo.category === selectedCategory;
     const yearMatch = !selectedYear || photo.year === selectedYear;
     return categoryMatch && yearMatch;
   });
+
+  const totalPages = Math.ceil(filteredPhotos.length / photosPerPage);
+  const currentPhotos = filteredPhotos.slice((currentPage - 1) * photosPerPage, currentPage * photosPerPage);
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const handleImageLoad = () => {
+    setLoading(false);
+  };
+
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    setCurrentPage(1);
+  };
+
+  const handleYearChange = (year: number | null) => {
+    setSelectedYear(year);
+    setCurrentPage(1);
+  };
 
   return (
     <div className="min-h-screen pt-20 px-4 md:px-6">
@@ -868,7 +896,7 @@ function Portfolio() {
                   {categories.map(category => (
                     <button
                       key={category}
-                      onClick={() => setSelectedCategory(category)}
+                      onClick={() => handleCategoryChange(category)}
                       className={`px-3 py-1 rounded-full text-sm transition-colors ${
                         selectedCategory === category
                           ? 'bg-cosmic-blue text-white'
@@ -884,7 +912,7 @@ function Portfolio() {
                 <h3 className="text-sm font-semibold text-gray-300 mb-2">Years</h3>
                 <div className="flex flex-wrap gap-2">
                   <button
-                    onClick={() => setSelectedYear(null)}
+                    onClick={() => handleYearChange(null)}
                     className={`px-3 py-1 rounded-full text-sm transition-colors ${
                       !selectedYear
                         ? 'bg-cosmic-blue text-white'
@@ -896,7 +924,7 @@ function Portfolio() {
                   {years.map(year => (
                     <button
                       key={year}
-                      onClick={() => setSelectedYear(year)}
+                      onClick={() => handleYearChange(year)}
                       className={`px-3 py-1 rounded-full text-sm transition-colors ${
                         selectedYear === year
                           ? 'bg-cosmic-blue text-white'
@@ -918,7 +946,7 @@ function Portfolio() {
             {categories.map(category => (
               <button
                 key={category}
-                onClick={() => setSelectedCategory(category)}
+                onClick={() => handleCategoryChange(category)}
                 className={`px-4 py-2 rounded-full transition-colors ${
                   selectedCategory === category
                     ? 'bg-cosmic-blue text-white'
@@ -931,7 +959,7 @@ function Portfolio() {
           </div>
           <div className="space-x-2">
             <button
-              onClick={() => setSelectedYear(null)}
+              onClick={() => handleYearChange(null)}
               className={`px-4 py-2 rounded-full transition-colors ${
                 !selectedYear
                   ? 'bg-cosmic-blue text-white'
@@ -943,7 +971,7 @@ function Portfolio() {
             {years.map(year => (
               <button
                 key={year}
-                onClick={() => setSelectedYear(year)}
+                onClick={() => handleYearChange(year)}
                 className={`px-4 py-2 rounded-full transition-colors ${
                   selectedYear === year
                     ? 'bg-cosmic-blue text-white'
@@ -961,7 +989,7 @@ function Portfolio() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
           layout
         >
-          {filteredPhotos.map(photo => (
+          {currentPhotos.map(photo => (
             <motion.div
               key={photo.id}
               layout
@@ -972,10 +1000,16 @@ function Portfolio() {
               onClick={() => setSelectedPhoto(photo)}
             >
               <div className="relative aspect-square overflow-hidden rounded-lg">
+                {loading && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+                    <div className="loader"></div>
+                  </div>
+                )}
                 <img
                   src={photo.url}
                   alt={photo.title}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  onLoad={handleImageLoad}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex flex-col justify-end">
                   <h3 className="text-xl font-space font-bold text-white">{photo.title}</h3>
@@ -985,6 +1019,24 @@ function Portfolio() {
             </motion.div>
           ))}
         </motion.div>
+
+        {/* Pagination Controls */}
+        <div className="flex justify-center mt-8 space-x-4">
+          <button
+            onClick={handlePreviousPage}
+            disabled={currentPage === 1}
+            className="px-4 py-2 bg-space-light text-gray-300 rounded-lg hover:bg-cosmic-blue/20 disabled:opacity-50"
+          >
+            Previous
+          </button>
+          <button
+            onClick={handleNextPage}
+            disabled={currentPage === totalPages}
+            className="px-4 py-2 bg-space-light text-gray-300 rounded-lg hover:bg-cosmic-blue/20 disabled:opacity-50"
+          >
+            Next
+          </button>
+        </div>
 
         {/* Lightbox */}
         {selectedPhoto && (
@@ -1003,10 +1055,16 @@ function Portfolio() {
             </button>
             <div className="max-w-4xl w-full" onClick={e => e.stopPropagation()}>
               <div className="relative aspect-video md:aspect-auto md:h-[80vh]">
+                {loading && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+                    <div className="loader"></div>
+                  </div>
+                )}
                 <img
                   src={selectedPhoto.url}
                   alt={selectedPhoto.title}
                   className="w-full h-full object-contain rounded-lg"
+                  onLoad={handleImageLoad}
                 />
               </div>
               <div className="mt-4 text-center">
