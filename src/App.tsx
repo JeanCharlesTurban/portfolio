@@ -34,7 +34,7 @@ function App() {
               <Link to="/portfolio/about" className="nav-link">About</Link>
               <Link to="/portfolio/timeline" className="nav-link">Timeline</Link>
               <Link to="/portfolio/skills" className="nav-link">Skills</Link>
-              <Link to="/portfolio/pictures" className="nav-link">Portfolio</Link>
+              <Link to="/portfolio/pictures" className="nav-link">Photography</Link>
               <Link to="/portfolio/contact" className="nav-link">Contact</Link>
             </div>
           </div>

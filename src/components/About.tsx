@@ -62,15 +62,15 @@ function About() {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="flex justify-center space-x-6"
         >
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
+          <a href="https://github.com/JeanCharlesTurban" target="_blank" rel="noopener noreferrer" 
              className="text-gray-300 hover:text-cosmic-blue transition-colors">
             <Github size={24} />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+          <a href="https://www.linkedin.com/in/jeanturban" target="_blank" rel="noopener noreferrer"
              className="text-gray-300 hover:text-cosmic-blue transition-colors">
             <Linkedin size={24} />
           </a>
-          <a href="mailto:contact@example.com"
+          <a href="mailto:jt665@cornell.edu"
              className="text-gray-300 hover:text-cosmic-blue transition-colors">
             <Mail size={24} />
           </a>
