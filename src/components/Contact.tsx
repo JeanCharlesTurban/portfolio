@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { InlineWidget } from "react-calendly";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -67,52 +68,13 @@ function Contact() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            <form onSubmit={handleSubmit} className="bg-space-light/20 backdrop-blur-lg rounded-lg p-6 border border-cosmic-blue/20">
-              <div className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block text-gray-300 mb-2">Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full bg-space-dark/50 border border-cosmic-blue/20 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-cosmic-blue"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-gray-300 mb-2">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-space-dark/50 border border-cosmic-blue/20 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-cosmic-blue"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-gray-300 mb-2">Message</label>
-                  <textarea
-                    id="message"
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    rows={4}
-                    className="w-full bg-space-dark/50 border border-cosmic-blue/20 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-cosmic-blue"
-                    required
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-cosmic-blue hover:bg-cosmic-blue/90 text-white font-bold py-2 px-4 rounded-lg flex items-center justify-center space-x-2 transition-colors"
-                >
-                  <span>Send Message</span>
-                  <Send size={20} />
-                </button>
-              </div>
-            </form>
+            <div className="bg-space-light/20 backdrop-blur-lg rounded-lg p-6 border border-cosmic-blue/20">
+              <InlineWidget url="https://calendly.com/jeanturban/30min?preview_source=et_card&month=2025-02" />
+            </div>
           </motion.div>
         </div>
+
+
       </div>
     </div>
   );
