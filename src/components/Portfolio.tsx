@@ -59,36 +59,36 @@ import MiaGP2024Patio from '../../photos/IMG_7070.JPG'
 import MiaGPWhiteHorse from '../../photos/IMG_7072.JPG'
 import MiaGPAlpine from '../../photos/IMG_7087.JPG'
 import DarthRedbull from '../../photos/IMG_7114.JPG'
-// import FerrariRed from '../../photos/IMG_7128.JPG'
-// import FerrariRedTurn from '../../photos/IMG_7200.JPG'
-// import FerrariRedTurnTwo from '../../photos/IMG_7250.JPG'
-// import MiaGPAerialTurnEpic from '../../photos/IMG_7259.JPG'
-// import MiaGPLongShot from '../../photos/IMG_7266.JPG'
-// import MiaGPLongShotalt from '../../photos/IMG_7270.JPG'
-// import MiaGPLongShotTwo from '../../photos/IMG_7272.JPG'
-// import F1SampleCar from '../../photos/IMG_7276.JPG'
-// import MiaTarmac from '../../photos/IMG_7286.JPG'
-// import MiaEngine from '../../photos/IMG_7291.JPG'
-// import MiaEngineTwo from '../../photos/IMG_7292.JPG'
-// import MiaEngineThree from '../../photos/IMG_7293.JPG'
-// import MiaEngineFour from '../../photos/IMG_7294.JPG'
-// import MiaEngineFive from '../../photos/IMG_7299.JPG'
-// import MidtownNYC from '../../photos/IMG_7311.JPG'
-// import ManhantannSkylineMorning from '../../photos/IMG_7315.JPG'
-// import ManhantannSkyelineMorningTwo from '../../photos/IMG_7317.JPG'
-// import FerrariCarShot from '../../photos/IMG_7985.JPG'
-// import FerrariCarShotTwo from '../../photos/IMG_7999.JPG'
-// import TronCarShot from '../../photos/IMG_80141.JPG'
-// import TronCarShotTwo from '../../photos/IMG_8014.JPG'
-// import TronCarShotThree from '../../photos/IMG_8018.JPG'
-// import TronCarShotFour from '../../photos/IMG_8021.JPG'
-// import MacroToyCarone from '../../photos/IMG_8040.JPG'
-// import MacroToyCarTwo from '../../photos/IMG_8044.JPG'
-// import MacroToyCarThree from '../../photos/IMG_8063.JPG'
-// import RedMacroToyCarOne from '../../photos/IMG_8101.JPG'
-// import RedMacroToyCarTwo from '../../photos/IMG_8116.JPG'
-// import RedMacroToyCarThree from '../../photos/IMG_81181.JPG'
-// import RedMacroToyCarFour from '../../photos/IMG_8119.JPG'
+import FerrariRed from '../../photos/IMG_7128.JPG'
+import FerrariRedTurn from '../../photos/IMG_7200.JPG'
+import FerrariRedTurnTwo from '../../photos/IMG_7250.JPG'
+import MiaGPAerialTurnEpic from '../../photos/IMG_7259.JPG'
+import MiaGPLongShot from '../../photos/IMG_7266.JPG'
+import MiaGPLongShotalt from '../../photos/IMG_7270.JPG'
+import MiaGPLongShotTwo from '../../photos/IMG_7272.JPG'
+import F1SampleCar from '../../photos/IMG_7276.JPG'
+import MiaTarmac from '../../photos/IMG_7286.JPG'
+import MiaEngine from '../../photos/IMG_7291.JPG'
+import MiaEngineTwo from '../../photos/IMG_7292.JPG'
+import MiaEngineThree from '../../photos/IMG_7293.JPG'
+import MiaEngineFour from '../../photos/IMG_7294.JPG'
+import MiaEngineFive from '../../photos/IMG_7299.JPG'
+import MidtownNYC from '../../photos/IMG_7311.JPG'
+import ManhantannSkylineMorning from '../../photos/IMG_7315.JPG'
+import ManhantannSkyelineMorningTwo from '../../photos/IMG_7317.JPG'
+import FerrariCarShot from '../../photos/IMG_7985.JPG'
+import FerrariCarShotTwo from '../../photos/IMG_7999.JPG'
+import TronCarShot from '../../photos/IMG_80141.JPG'
+import TronCarShotTwo from '../../photos/IMG_8014.JPG'
+import TronCarShotThree from '../../photos/IMG_8018.JPG'
+import TronCarShotFour from '../../photos/IMG_8021.JPG'
+import MacroToyCarone from '../../photos/IMG_8040.JPG'
+import MacroToyCarTwo from '../../photos/IMG_8044.JPG'
+import MacroToyCarThree from '../../photos/IMG_8063.JPG'
+import RedMacroToyCarOne from '../../photos/IMG_8101.JPG'
+import RedMacroToyCarTwo from '../../photos/IMG_8116.JPG'
+import RedMacroToyCarThree from '../../photos/IMG_81181.JPG'
+import RedMacroToyCarFour from '../../photos/IMG_8119.JPG'
 
 
 
@@ -569,32 +569,246 @@ const photos: Photo[] = [
     description: 'Dark shot of a redbull car at the 2024 Miami GP',
     url: DarthRedbull,
   },
-  // {
-  //   id: 59,
-  //   year: 2024,
-  //   category: 'People',
-  //   title: 'Smiling Elder',
-  //   description: 'An elder with a warm smile',
-  //   url: 'https://example.com/photo59.jpg',
-  // },
-  // {
-  //   id: 60,
-  //   year: 2024,
-  //   category: 'Space',
-  //   title: 'Galaxy Swirl',
-  //   description: 'A swirling galaxy in the night sky',
-  //   url: 'https://example.com/photo60.jpg',
-  // },
-  // {
-  //   id: 61,
-  //   year: 2024,
-  //   category: 'Flight',
-  //   title: 'Bird in Flight',
-  //   description: 'A bird soaring through the sky',
-  //   url: 'https://example.com/photo61.jpg',
-  // },
-
-
+  {
+    id: 59,
+    year: 2024,
+    category: 'Formula 1',
+    title: 'Ferrari Red',
+    description: 'Ferrari red car at the 2024 Miami GP',
+    url: FerrariRed,
+  },
+  {
+    id: 60,
+    year: 2024,
+    category: 'Formula 1',
+    title: 'Ferrari Red Turn',
+    description: 'Ferrari red car at the 2024 Miami GP',
+    url: FerrariRedTurn,
+  },
+  {
+    id: 61,
+    year: 2024,
+    category: 'Formula 1',
+    title: 'Ferrari Red Turn',
+    description: 'Ferrari red car at the 2024 Miami GP',
+    url: FerrariRedTurnTwo,
+  },
+  {
+    id: 62,
+    year: 2024,
+    category: 'Formula 1',
+    title: 'Aston Martin Turn',
+    description: 'Aston Martin car at the 2024 Miami GP',
+    url: MiaGPAerialTurnEpic,
+  },
+  {
+    id: 63,
+    year: 2024,
+    category: 'Formula 1',
+    title: 'Mclaren Long Shot',
+    description: 'McLaren car at the 2024 Miami GP',
+    url: MiaGPLongShot,
+  },
+  {
+    id: 64,
+    year: 2024,
+    category: 'Formula 1',
+    title: 'Haas Long Shot',
+    description: 'Haas car at the 2024 Miami GP',
+    url: MiaGPLongShotalt,
+  },
+  {
+    id: 65,
+    year: 2024,
+    category: 'Formula 1',
+    title: 'Ferrari Long Shot',
+    description: 'Ferrari car at the 2024 Miami GP',
+    url: MiaGPLongShotTwo,
+  },
+  {
+    id: 66,
+    year: 2024,
+    category: 'Formula 1',
+    title: 'F1 Sample Car',
+    description: 'Prototype F1 car',
+    url: F1SampleCar,
+  },
+  {
+    id: 67,
+    year: 2024,
+    category: 'Flight',
+    title: 'MIA Tarmac',
+    description: 'Tarmac at the Miami Airport',
+    url: MiaTarmac,
+  },
+  {
+    id: 68,
+    year: 2024,
+    category: 'Flight',
+    title: 'Engine over MIA',
+    description: 'Miami from above',
+    url: MiaEngine,
+  },
+  {
+    id: 69,
+    year: 2024,
+    category: 'Flight',
+    title: 'Engine over MIA II',
+    description: 'Miami from above',
+    url: MiaEngineTwo,
+  },
+  {
+    id: 70,
+    year: 2024,
+    category: 'Flight',
+    title: 'Engine over MIA III',
+    description: 'Miami from above',
+    url: MiaEngineThree,
+  },
+  {
+    id: 71,
+    year: 2024,
+    category: 'Flight',
+    title: 'Engine over MIA IV',
+    description: 'Miami from above',
+    url: MiaEngineFour,
+  },
+  {
+    id: 72,
+    year: 2024,
+    category: 'Flight',
+    title: 'Engine over MIA V',
+    description: 'Miami from above',
+    url: MiaEngineFive,
+  },
+  {
+    id: 73,
+    year: 2024,
+    category: 'Buildings',
+    title: 'NYC Midtown',
+    description: 'Sunset in Midtown',
+    url: MidtownNYC,
+  },
+  {
+    id: 74,
+    year: 2024,
+    category: 'Buildings',
+    title: 'Manhattan Skyline from a bus',
+    description: 'The Manhattan skyline from a bus',
+    url: ManhantannSkylineMorning,
+  },
+  {
+    id: 75,
+    year: 2024,
+    category: 'Buildings',
+    title: 'Manhattan Skyline from a bus II',
+    description: 'The Manhattan skyline from a bus',
+    url: ManhantannSkyelineMorningTwo,
+  },
+  {
+    id: 76,
+    year: 2024,
+    category: 'Macro',
+    title: 'Ferrari Toy Car',
+    description: 'Macro shot of a toy car',
+    url: FerrariCarShot,
+  },
+  {
+    id: 77,
+    year: 2024,
+    category: 'Macro',
+    title: 'Ferrari Toy Car',
+    description: 'Macro shot of a toy car',
+    url: FerrariCarShotTwo,
+  },
+  {
+    id: 78,
+    year: 2024,
+    category: 'Macro',
+    title: 'Tron F1 Long Exposure',
+    description: 'Long exposure of a toy car',
+    url: TronCarShot,
+  },
+  {
+    id: 79,
+    year: 2024,
+    category: 'Macro',
+    title: 'Tron B&W',
+    description: 'Long exposure of a toy car',
+    url: TronCarShotTwo,
+  },
+  {
+    id: 80,
+    year: 2024,
+    category: 'Macro',
+    title: 'Ferrari Blue',
+    description: 'Long exposure of a toy car',
+    url: TronCarShotThree,
+  },
+  {
+    id: 81,
+    year: 2024,
+    category: 'Macro',
+    title: 'Ferrari Long',
+    description: 'Long exposure of a toy car',
+    url: TronCarShotFour,
+  },
+  {
+    id: 82,
+    year: 2024,
+    category: 'Macro',
+    title: 'Toy Car IRL',
+    description: 'Toy car IRL',
+    url: MacroToyCarone,
+  },
+  {
+    id: 83,
+    year: 2024,
+    category: 'Macro',
+    title: 'Toy Car Series I',
+    description: 'Macro test shots with CO2',
+    url: MacroToyCarTwo,
+  },
+  {
+    id: 84,
+    year: 2024,
+    category: 'Macro',
+    title: 'Toy Car Series II',
+    description: 'Macro test shots with CO2',
+    url: MacroToyCarThree,
+  },
+  {
+    id: 85,
+    year: 2024,
+    category: 'Macro',
+    title: 'Toy Car Series III',
+    description: 'Macro test shots with CO2',
+    url: RedMacroToyCarOne,
+  },
+  {
+    id: 86,
+    year: 2024,
+    category: 'Macro',
+    title: 'Toy Car Series IV',
+    description: 'Macro test shots with CO2',
+    url: RedMacroToyCarTwo,
+  },
+  {
+    id: 87,
+    year: 2024,
+    category: 'Macro',
+    title: 'Toy Car Series V',
+    description: 'Macro test shots with CO2',
+    url: RedMacroToyCarThree,
+  },
+  {
+    id: 88,
+    year: 2024,
+    category: 'Macro',
+    title: 'Toy Car Series VI',
+    description: 'Macro test shots with CO2',
+    url: RedMacroToyCarFour,
+  }
 ];
 
 const categories = ['All', 'Buildings', 'People', 'Space', 'Macro', 'Nature', 'Flight', 'Formula 1'];
